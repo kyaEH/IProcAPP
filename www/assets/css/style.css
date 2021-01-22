@@ -1,0 +1,425 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+#recaptcha > div {
+    width: auto !important;
+    margin-bottom: .5em;
+}
+
+html{
+    scroll-behavior: smooth;
+    height: 100%;
+    font-family: 'Raleway', sans-serif;
+}
+
+/* BODY */
+body{
+    height: 100%;
+    position: relative;
+    background: linear-gradient(#000,#100)
+}
+
+/* HEADER */
+
+.logoAll{
+    text-align: center;
+}
+
+.menu{
+    display: none;
+}
+
+.logo{
+    width: 100%;
+    padding: 8px 0;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    background-color: #000;
+    border-bottom: 3px #f00 solid;
+    box-shadow: 0px 0px 20px #f00;
+    position:fixed;
+    z-index: 10;
+    top:0;
+    margin-bottom: 10px
+
+}
+
+.logo h1{
+    font-family: 'Raleway', sans-serif;
+    font-size: min(6vw, 36px) ;
+    color: #f00;
+  text-shadow: 0px 0px 10px #f00;
+}
+
+
+.logo p{
+    font-family: 'Raleway', sans-serif;
+    color: #FB667A;
+    font-size: min(4vw, 24px) ;
+}
+
+.input{
+    border: none;
+    border-radius: 5px;
+    padding: 7px;
+    width: 90%;
+    margin-bottom: 30px;
+    color: white;
+    background-color: #2b3c4d;
+}
+
+/* SECTION MOBILE */
+
+.section{
+    color: #ecf0f1;
+    height: 150px;
+    width: 100%;
+    overflow: hidden;
+    animation: 1s ease-in-out moveToLeft;
+}
+
+.section:nth-child(odd){
+    animation: 1s ease-in-out moveToRight;
+}
+
+.sectionTitle{
+    position: relative;
+    z-index: 2;
+    top: 40px;
+    text-align: center;
+    font-family: 'Raleway', sans-serif;
+    font-weight: 900;
+    color: #f39c12;
+    text-shadow: 0px 0px 10px #000;
+}
+
+.sectionFigure{
+    position: relative;
+    top: -25px;
+    z-index: 1;
+    height: 100%;
+}
+
+.sectionImg{
+    width: 99.5%;
+    opacity: 0.7;
+    transition: 0.3s ease-in-out;
+    border:1px solid rgba(0, 0, 255, .2);
+}
+
+.sectionFigure figcaption{
+    font-family: 'Open Sans', sans-serif;
+    position: absolute;
+    z-index: 2;
+    top: 70px;
+    width: 100%;
+    text-align: center;
+}
+
+.sectionBtn{
+    position: relative;
+    z-index: 2;
+    display: block;
+    text-align: center;
+    width: 60%;
+    left: 50%;
+    top: -100px;
+    transform: translateX(-50%);
+    text-decoration: none;
+    color: white;
+    background-color: #c0392b;
+    padding: 7px;
+    border-radius: 5px;
+    font-family: 'Open Sans', sans-serif;
+    transition: 0.3s ease-in-out;
+}
+
+.sectionBtn:hover{
+    background-color: #e74c3c;
+}
+
+/* FOOTER */
+
+.footer{
+    display: none;
+}
+
+@media screen and (min-width: 600px){
+
+    /* SECTION TABLETTE */
+    .section{
+        width: 50%;
+        float: left;
+    }
+
+}
+/*
+@media screen and (min-width: 992px) {
+
+     LOGO & MENU PC 
+
+    .logo{
+        flex-direction: row;
+        justify-content: space-around;
+        position: fixed;
+        top: 0;
+        z-index: 10;
+    }
+
+    .logoAll{
+        text-align: left;
+    }
+
+    .menu{
+        display: block;
+    }
+
+    .link{
+        position: relative;
+        font-family: 'Open Sans', sans-serif;
+        font-weight: 300;
+        font-size: 0.95em;
+        text-decoration: none;
+        color: white;
+        margin: 0 5px;
+        transition: 0.3s ease-in-out;
+    }
+
+    .link:hover{
+        color: #FB667A;
+    }
+
+    .link::after{
+        position: absolute;
+        content: '';
+        width: 0;
+        left: 0;
+        bottom: -5px;
+        height: 2px;
+        background-color: #FB667A;
+        transition: 0.3s ease-in-out;
+    }
+
+    .link:hover::after{
+        width: 100%;
+    }
+
+     MAIN 
+
+    .main {
+        margin-bottom: 50px;
+        display: flex;
+        justify-content: space-around;
+        flex-wrap: wrap;
+        overflow: hidden;
+
+    }
+    /* SECTION PC 
+
+    .section{
+        height: 200px;
+        width: 49%;
+        float: right;
+        margin: 3px 0;
+        margin-top:0;
+    }
+
+    .sectionBtn{
+        height: 40px;
+        width: 100%;
+        left: auto;
+        top: 0;
+        transform: translateX(0%);
+        border-radius: 0px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-weight: 900;
+    }
+
+    .section:hover{
+        cursor: pointer;
+    }
+
+    .section:hover .sectionBtn{
+        top: -80px;
+    }
+
+    .sectionTitle{
+        top: 50px;
+        transition: 0.2s ease-out;
+    }
+
+    .sectionFigure figcaption{
+        top: 90px;
+    }
+
+    .section:hover .sectionTitle{
+        top: 40px;
+    }
+
+    .section:hover .sectionImg{
+        transform: scale(1.07);
+    }
+
+    /* FOOTER 
+
+    .footer{
+        position: relative;
+        bottom: 0;
+        width: 100%;
+        background-color: #34495e;
+        padding: 30px 0 60px 0;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+    }
+
+    .footerCredit{
+        position: absolute;
+        bottom: 0;
+        height: 40px;
+        width: 100%;
+        background-color: #000;
+        color: #ecf0f1;
+        font-family: 'Raleway', sans-serif;
+        font-weight: 100;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .footerCredit a{
+        color: white;
+    }
+
+    .footer h2{
+        bottom: 0;
+        display: block;
+        font-family: 'Raleway', sans-serif;
+        font-weight: 300;
+        color: #ecf0f1;
+        font-size: 1.2em;
+        margin-bottom: 15px;
+    }
+
+    .footerSection{
+        width: 100%;
+        display: flex;
+        justify-content: space-around;
+    }
+
+    .sectionFooter{
+        display: flex;
+        flex-direction: column;
+    }
+
+    .sectionFooter a{
+        color: #f39c12;
+        text-decoration: none;
+        font-family: 'Open Sans', sans-serif;
+    }
+
+    .sectionFooter a:hover{
+        color: #e74c3c;
+    }
+
+    .sectionFooter p{
+        color: #ecf0f1;
+        font-family: 'Open Sans', sans-serif;
+        font-weight: 100;
+    }
+
+}
+*/
+/* ANIMATIONS */
+
+@keyframes moveToLeft {
+    0%{
+        transform: translateX(120px);
+        opacity: 0;
+    }
+    100%{
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes moveToRight {
+    0%{
+        transform: translateX(-120px);
+        opacity: 0;
+    }
+    100%{
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+
+
+#popupBack{
+  position: fixed;
+  top:0;
+  left: 0;
+  background: rgba(100, 100, 100, 0);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100vh;
+  margin: 0;
+    z-index: 1;           
+}
+
+#popup{
+  width: 350px;
+  height: 200px;
+  background-color: #2c3e50; 
+  border-radius: 5px;
+  font-family: Roboto;
+  font-weight: 300;
+  color: white;
+  -webkit-box-shadow: 0px 5px 11px -5px #000000; 
+  box-shadow: 0px 5px 11px -5px #000000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+
+}
+
+#popup button{
+  color: black;
+  background: #ccc;
+  padding: 10px 25px;
+  border: #FB667A;
+  border-radius: 5px;  
+  position: relative;
+  top: 15px;
+  transition: 0.3s;
+}
+
+#popup button:hover{
+  background: #b09de5;
+  cursor: pointer;
+}
+
+#popup button:focus{
+  outline: none;
+}
+
+#popup p{
+  margin: 0px 30px 10px 30px;
+  text-align: center;
+  font-weight: 100;
+}
+
+#popup h2{
+  margin-top: -10px;
+}       
